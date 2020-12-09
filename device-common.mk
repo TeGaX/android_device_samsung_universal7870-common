@@ -71,13 +71,12 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-service \
-    android.hardware.audio@5.0-impl \
-    android.hardware.audio.effect@5.0-impl \
-    android.hardware.soundtrigger@2.2-impl \
+    android.hardware.audio.service \
+    android.hardware.audio@6.0-impl \
+    android.hardware.audio.effect@6.0-impl \
+    android.hardware.soundtrigger@2.3-impl \
     audio.a2dp.default \
     audio.usb.default \
-    audio.primary.universal7870_32 \
     audio.r_submix.default \
     libtinycompress 
 
@@ -95,9 +94,8 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.common@1.0-helper \
-    android.hardware.camera.provider@2.5-impl \
+    android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.5-service \
-    libion_exynos \
     Snap
 
 # Camera configurations
@@ -106,7 +104,7 @@ PRODUCT_COPY_FILES += \
 
 # Cas
 PRODUCT_PACKAGES += \
-    android.hardware.cas@1.1-service
+    android.hardware.cas@1.2-service
 
 # Configstore
 PRODUCT_PACKAGES += \
@@ -116,7 +114,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service  \
-    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.2-resources.vendor \
     android.hardware.graphics.composer@2.2-service  \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl \
@@ -150,7 +148,10 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
-    android.hidl.base@1.0.vendor
+    libhidltransport \
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -161,7 +162,7 @@ PRODUCT_COPY_FILES += \
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-impl \
-    android.hardware.keymaster@4.0-service
+    android.hardware.keymaster@4.1-service
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -207,7 +208,7 @@ PRODUCT_PACKAGES += \
 
 # Radio
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.4 \
+    android.hardware.radio@1.5 \
     android.hardware.radio.config@1.2 \
     libxml2
 
@@ -219,8 +220,8 @@ PRODUCT_PACKAGES += \
     init.samsungexynos7870.usb.rc \
     init.vendor.rilchip.rc \
     init.vendor.rilcommon.rc \
-    wifi.rc \
-    ueventd.rc
+    init.wifi.rc \
+    ueventd.samsungexynos7870.rc
 
 # Recorder
 PRODUCT_PACKAGES += \
@@ -233,7 +234,7 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl.samsung \
+    android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service
 
 # Thermal
@@ -262,7 +263,7 @@ PRODUCT_PACKAGES += \
 
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.vendor_security_patch=2019-11-01
+    ro.build.vendor_security_patch=2020-11-05
 
 # VNDK
 PRODUCT_PACKAGES += \
